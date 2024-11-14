@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Home - My Investment Site{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <h2 class="text-4xl font-bold text-gray-800 mb-8" style="text-align: center;">CONNEXION</h2>
+    
+    <form method="POST">
+        
+
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <!-- Email -->
+        <div class="mb-4">
+            <label class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 7L4 7h16l-8 4zm0 2l8-4v8H4v-8l8 4z"/>
+                </svg>
+                <span> <strong> <h4>EMAIL</h4></strong></span>
+            </label>
+            {{ form.email }}
+            {{ form.email.errors }} </div>
+
+       
+       
+
+        <!-- Password -->
+        <div class="mb-4">
+            <label class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C9.8 2 8 3.8 8 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2h-2V6c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2H10V6c0-1.1.9-2 2-2zm6 8v8H6v-8h12z"/>
+                </svg>
+                <span><STRONG><H4>MOT DE PASSE</H4></STRONG> </span>
+            </label>
+            {{ form.password }}
+            {{ form.password.errors }}    
+        </div>
+
+      
+
+        <!-- Submit Button -->
+        <div class="text-center">
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                SE CONNECTER
+            </button>
+        </div>
+        <div style="font-size: 20px;"> Vous n'avez pas encore  de compte ? <a href="{% url 'inscription' %}"> <i style="color: blue;">Inscrivez 
+            vous</i> </a></div>
+</div>
+    </form>
+</div>
+{% endblock %}
