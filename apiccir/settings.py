@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-0v99(7aipk9lk&_u)_j8a@nvij0)hufm-eayne^vf37r)jxn4#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+
+ALLOWED_HOSTS = ['apiccir-zzv173d2.b4a.run', 'www.apiccir-zzv173d2.b4a.run']
+
 
 
 
@@ -50,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://apiccir-zzv173d2.b4a.run', 'https://www.apiccir-zzv173d2.b4a.run']
 
 ROOT_URLCONF = 'apiccir.urls'
 
